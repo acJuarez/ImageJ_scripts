@@ -1,7 +1,7 @@
 Stack.getDimensions (width, height, channels, slices, frames)
-saveDirectory = "/Users/aj0204/Documents/Covert_lab/images_to_analyze/tiff_test/"
+saveDirectory = "[INSERT FILEPATH NAME HERE]"
 print(saveDirectory)
-exp_name = "dimmJuly"
+exp_name = "[USER_SELECTED_NAME]"
 
 // Loop through each time frame
 for (t = 1; t <= frames; t++) {
