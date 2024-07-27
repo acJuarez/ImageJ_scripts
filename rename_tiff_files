@@ -1,0 +1,15 @@
+Stack.getDimensions (width, height, channels, slices, frames)
+saveDirectory = "/Users/aj0204/Documents/Covert_lab/images_to_analyze/tiff_test/"
+exp_name = "dimm_071124"
+
+for (s = 1; s<=slices; s++){
+  setSlice(s);
+  run("Duplicate...", "title = frame_" + s);
+  sliceLabel = getInfo("slice.label");
+
+  channel = substring(sliceLabel,13, 14);
+  frame = substring(sliceLabel, 36,40);
+
+  saveAs("Tiff", saveDirectory + exp_name + "_t" + frame + "xy00c" + channel + ".tif");
+  close();
+}
