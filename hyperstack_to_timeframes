@@ -1,0 +1,15 @@
+Stack.getDimensions (width, height, channels, slices, frames)
+saveDirectory = "/Users/aj0204/Documents/Covert_lab/images_to_analyze/tiff_test/"
+print(saveDirectory)
+exp_name = "dimmJuly"
+
+// Loop through each time frame
+for (t = 1; t <= frames; t++) {
+        Stack.setFrame(t)
+        run("Duplicate...", "title=frame_" + t);
+
+    // Save the duplicated frame as a TIFF file
+    saveAs("Tiff", saveDirectory + exp_name +"t00" + t+"xy00" +".tif");
+
+    close();
+}
